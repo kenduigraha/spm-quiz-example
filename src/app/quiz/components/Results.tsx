@@ -60,7 +60,7 @@ export function Results({ onRestart }: ResultsProps) {
           <Trophy className="w-10 h-10 text-blue-600" />
         </div>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Quiz Complete!</h1>
-        <p className="text-gray-600">Here's how you performed</p>
+        <p className="text-gray-600">Here&apos;s how you performed</p>
       </div>
 
       {/* Score Overview */}
