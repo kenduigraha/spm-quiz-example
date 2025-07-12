@@ -14,7 +14,7 @@ export function Results({ onRestart }: ResultsProps) {
 
   const totalTime = Date.now() - state.startTime - state.totalPausedDuration
   const averageTimePerQuestion = totalTime / state.questions.length
-  const percentage = Math.round((state.score / state.questions.length) * 100)
+  const percentage = Math.round((state.score || 0 / state.questions.length) * 100)
 
   const formatTime = (ms: number) => {
     const seconds = Math.floor(ms / 1000)

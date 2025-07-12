@@ -22,7 +22,7 @@ export interface QuizState {
   pausedTime: number
   totalPausedDuration: number
   isCompleted: boolean
-  score: number
+  score: number | null
 }
 
 type QuizAction =
@@ -77,6 +77,7 @@ function quizReducer(state: QuizState, action: QuizAction): QuizState {
 
     case "COMPLETE_QUIZ":
       const score = state.answers.reduce((acc, answer, index) => {
+        if (!acc) return 0
         return answer === state.questions[index].correctAnswer ? acc + 1 : acc
       }, 0)
       return { ...state, isCompleted: true, score }
